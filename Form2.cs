@@ -65,6 +65,8 @@ namespace ruletka_home_edition
 			Rullete f1 = new Rullete();
 			Rullete.fixtimer1 = 0;
 			Rullete.balans = a1;
+			Rullete.stavka = 0;
+			f1.UpdateTable();
 			
 			Close();
 

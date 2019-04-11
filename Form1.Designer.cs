@@ -25,6 +25,7 @@
 		public void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.button1 = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
@@ -46,13 +47,19 @@
 			this.label8 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
+			this.button7 = new System.Windows.Forms.Button();
+			this.button8 = new System.Windows.Forms.Button();
+			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.timer3 = new System.Windows.Forms.Timer(this.components);
+			this.label10 = new System.Windows.Forms.Label();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(169, 204);
+			this.button1.Location = new System.Drawing.Point(266, 205);
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
+			this.button1.Size = new System.Drawing.Size(75, 109);
 			this.button1.TabIndex = 0;
 			this.button1.Text = "Играть";
 			this.button1.UseVisualStyleBackColor = true;
@@ -114,6 +121,7 @@
 			this.label5.Size = new System.Drawing.Size(51, 13);
 			this.label5.TabIndex = 6;
 			this.label5.Text = "БАЛАНС";
+			this.label5.Click += new System.EventHandler(this.label5_Click);
 			// 
 			// label6
 			// 
@@ -123,10 +131,11 @@
 			this.label6.Size = new System.Drawing.Size(35, 13);
 			this.label6.TabIndex = 7;
 			this.label6.Text = "label6";
+			this.label6.Click += new System.EventHandler(this.label6_Click);
 			// 
 			// button2
 			// 
-			this.button2.Location = new System.Drawing.Point(296, 275);
+			this.button2.Location = new System.Drawing.Point(347, 262);
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(45, 23);
 			this.button2.TabIndex = 8;
@@ -136,7 +145,7 @@
 			// 
 			// button3
 			// 
-			this.button3.Location = new System.Drawing.Point(347, 275);
+			this.button3.Location = new System.Drawing.Point(402, 262);
 			this.button3.Name = "button3";
 			this.button3.Size = new System.Drawing.Size(45, 23);
 			this.button3.TabIndex = 9;
@@ -146,7 +155,7 @@
 			// 
 			// button4
 			// 
-			this.button4.Location = new System.Drawing.Point(402, 275);
+			this.button4.Location = new System.Drawing.Point(347, 291);
 			this.button4.Name = "button4";
 			this.button4.Size = new System.Drawing.Size(45, 23);
 			this.button4.TabIndex = 10;
@@ -156,7 +165,7 @@
 			// 
 			// button5
 			// 
-			this.button5.Location = new System.Drawing.Point(453, 275);
+			this.button5.Location = new System.Drawing.Point(402, 291);
 			this.button5.Name = "button5";
 			this.button5.Size = new System.Drawing.Size(45, 23);
 			this.button5.TabIndex = 11;
@@ -167,7 +176,7 @@
 			// radioButton1
 			// 
 			this.radioButton1.AutoSize = true;
-			this.radioButton1.Location = new System.Drawing.Point(484, 200);
+			this.radioButton1.Location = new System.Drawing.Point(453, 208);
 			this.radioButton1.Name = "radioButton1";
 			this.radioButton1.Size = new System.Drawing.Size(62, 17);
 			this.radioButton1.TabIndex = 12;
@@ -178,7 +187,7 @@
 			// radioButton2
 			// 
 			this.radioButton2.AutoSize = true;
-			this.radioButton2.Location = new System.Drawing.Point(484, 223);
+			this.radioButton2.Location = new System.Drawing.Point(453, 231);
 			this.radioButton2.Name = "radioButton2";
 			this.radioButton2.Size = new System.Drawing.Size(76, 17);
 			this.radioButton2.TabIndex = 13;
@@ -213,7 +222,7 @@
 			// 
 			// timer2
 			// 
-			this.timer2.Interval = 1;
+			this.timer2.Interval = 400;
 			this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
 			// 
 			// label8
@@ -248,11 +257,65 @@
 			this.label9.Text = "Вход";
 			this.label9.Click += new System.EventHandler(this.label9_Click);
 			// 
+			// button7
+			// 
+			this.button7.Location = new System.Drawing.Point(641, 364);
+			this.button7.Name = "button7";
+			this.button7.Size = new System.Drawing.Size(44, 27);
+			this.button7.TabIndex = 24;
+			this.button7.Text = "-";
+			this.button7.UseVisualStyleBackColor = true;
+			this.button7.Click += new System.EventHandler(this.button7_Click);
+			// 
+			// button8
+			// 
+			this.button8.Location = new System.Drawing.Point(729, 364);
+			this.button8.Name = "button8";
+			this.button8.Size = new System.Drawing.Size(44, 27);
+			this.button8.TabIndex = 25;
+			this.button8.Text = "+";
+			this.button8.UseVisualStyleBackColor = true;
+			this.button8.Click += new System.EventHandler(this.button8_Click);
+			// 
+			// dataGridView1
+			// 
+			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView1.Location = new System.Drawing.Point(12, 205);
+			this.dataGridView1.Name = "dataGridView1";
+			dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
+			dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DimGray;
+			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+			this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
+			this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+			this.dataGridView1.Size = new System.Drawing.Size(240, 233);
+			this.dataGridView1.TabIndex = 26;
+			// 
+			// timer3
+			// 
+			this.timer3.Enabled = true;
+			this.timer3.Interval = 5000;
+			this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+			// 
+			// label10
+			// 
+			this.label10.AutoSize = true;
+			this.label10.Location = new System.Drawing.Point(12, 189);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(88, 13);
+			this.label10.TabIndex = 27;
+			this.label10.Text = "Connection_error";
+			this.label10.Visible = false;
+			// 
 			// Rullete
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.label10);
+			this.Controls.Add(this.dataGridView1);
+			this.Controls.Add(this.button8);
+			this.Controls.Add(this.button7);
 			this.Controls.Add(this.label9);
 			this.Controls.Add(this.label7);
 			this.Controls.Add(this.label8);
@@ -273,8 +336,10 @@
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.button1);
 			this.Name = "Rullete";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Rullete";
 			this.Load += new System.EventHandler(this.Form1_Load);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -304,6 +369,11 @@
 		private System.Windows.Forms.Label label8;
 		public System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.Button button7;
+		private System.Windows.Forms.Button button8;
+		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.Timer timer3;
+		private System.Windows.Forms.Label label10;
 	}
 }
 

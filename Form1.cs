@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ruletka_home_edition
 {
@@ -23,17 +24,36 @@ namespace ruletka_home_edition
 			label6.Text = balans.ToString();
 
 		}
-
+		public static string connString = @"Data Source=DESKTOP-FS4I3IA;Initial Catalog=zerrrors;Integrated Security=True";
 		//Присваивание переменных
 		public static int balans = 1000, stavka = 25;
 		int USLOVIE1;
-		public static int fixtimer1=0;
-		public static string USERNAME,USERLOGIN;   // f3 рофлы
+		public static int fixtimer1 = 0;
+		public static string USERNAME, USERLOGIN = "Вход";   // f3 рофлы
 
-		//Запуск игры
-		public void button1_Click(object sender, EventArgs e)
+		public void UpdateTable()
 		{
-			if (balans != 0)
+			string	SqlText = "UPDATE [Users] SET [balans]=" + "\'" + balans.ToString() + "\'" + " WHERE [Users].[login]=" + "\'" + USERNAME + "\'";
+			MyExecuteNonQuery(SqlText);
+		}
+
+		public void MyExecuteNonQuery(string SqlText) //возвращает кол-во обработанных данных
+		{
+			SqlConnection cn; // экземпляр класса типа SqlConnection
+			SqlCommand cmd;
+
+			// выделение памяти с инициализацией строки соединения с базой данных
+			cn = new SqlConnection(connString);
+			cn.Open(); // открыть подключение
+			cmd = cn.CreateCommand(); // задать SQL-команду
+			cmd.CommandText = SqlText; // задать командную строку
+			cmd.ExecuteNonQuery(); // выполнить SQL-команду
+			cn.Close(); // закрыть подключение
+						//Запуск игры
+		}
+			public void button1_Click(object sender, EventArgs e)
+		{
+			if (balans >= stavka)
 			{
 				int q;
 				Random rand1 = new Random((int)DateTime.Now.Ticks & 0x0000126);
@@ -44,6 +64,7 @@ namespace ruletka_home_edition
 			else
 			{
 				MessageBox.Show("Недостаточно средств");
+				textBox1.Text = null;
 				Form2 f2 = new Form2();
 				f2.Show();
 			}
@@ -87,10 +108,13 @@ namespace ruletka_home_edition
 		{
 			if (balans == 0)
 			{
-				MessageBox.Show("Недостаточно средств");
+                timer2.Enabled = false;
+                MessageBox.Show("Недостаточно средств");
 				Form2 f2 = new Form2();
 				f2.Show();
-			}
+              
+
+            }
 			else
 			{
 				if (timer2.Enabled == false)
@@ -107,6 +131,7 @@ namespace ruletka_home_edition
 		//timer2
 		public void timer2_Tick(object sender, EventArgs e)
 		{
+
 			label6.Text = balans.ToString();
 			textBox1.Text = stavka.ToString();
 			int q,q1,q2,q3,q4,q5;
@@ -221,14 +246,64 @@ namespace ruletka_home_edition
 				textBox1.Text = null;
 				stavka = 0;
 				fixtimer1 = 1;
-				Form2 f = new Form2();
-				f.Show();
+				MessageBox.Show("Недостаточно средств");
+				Form2 f2 = new Form2();
+				f2.Show();
 
 			}
 			
 		}
 
+		private void button7_Click(object sender, EventArgs e)
+		{
+			if (timer2.Interval < 3000)
+			{
+				timer2.Interval = timer2.Interval + 50;
+			}
+			else
+			{
+				timer2.Interval = 3000;
+			}
+		}
 
+		private void button8_Click(object sender, EventArgs e)
+		{
+			if (timer2.Interval >= 51)
+			{
+				timer2.Interval = timer2.Interval - 50;
+			}
+			else
+			{
+				timer2.Interval = 1;
+			}
+		}
+
+		private void label6_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label5_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void timer3_Tick(object sender, EventArgs e)
+		{
+			try
+			{
+				string SqlText = "SELECT [Users].[login], [Users].[balans] FROM [Users] ORDER BY [Users].[balans] DESC";
+				SqlDataAdapter da = new SqlDataAdapter(SqlText, connString);
+				DataSet ds = new DataSet();
+				da.Fill(ds, "[newtable]".ToString());
+				dataGridView1.DataSource = ds.Tables["[newtable]"].DefaultView;
+				label10.Visible = false;
+			}
+			catch
+			{
+				label10.Visible = true;
+			}
+		}
 
 		private void label9_Click(object sender, EventArgs e)
 		{
@@ -240,6 +315,7 @@ namespace ruletka_home_edition
 			}
 			if (USERLOGIN == "Выход")
 			{
+				balans = 1000;
 				USERLOGIN = "Вход";
 				USERNAME = "";
 			}
@@ -271,11 +347,8 @@ namespace ruletka_home_edition
 
 			if (balans == 0)
 			{
-				//timer2.Enabled = false;
-				
-				//MessageBox.Show("Недостаточно средств");
-				//Form2 f = new Form2();
-				//f.Show();
+				timer2.Enabled = false;
+				textBox1.Text = null;
 			}
 			//проверка баланса и условия победы, поражения
 			if (balans >= stavka)
@@ -289,6 +362,15 @@ namespace ruletka_home_edition
 						label8.Text = "Вы выиграли "+stavka+" руб";
 						label8.ForeColor = Color.Green;
 						USLOVIE1 = 1;
+						try
+						{
+							UpdateTable();
+						}
+						catch
+						{
+							MessageBox.Show("Не удалось установить соединение с сервером");
+						}
+
 					}
 					if (q % 2 !=0)
 					{
@@ -296,6 +378,15 @@ namespace ruletka_home_edition
 						label8.Text = "Вы проиграли " + stavka + " руб";
 						label8.ForeColor = Color.Red;
 						USLOVIE1 = 2;
+						try
+						{
+							UpdateTable();
+						}
+						catch
+						{
+							MessageBox.Show("Не удалось установить соединение с сервером");
+						}
+
 					}
 
 				}
@@ -307,6 +398,15 @@ namespace ruletka_home_edition
 						label8.Text = "Вы выиграли " + stavka + " руб";
 						label8.ForeColor = Color.Green;
 						USLOVIE1 = 3;
+						try
+						{
+							UpdateTable();
+						}
+						catch
+						{
+							MessageBox.Show("Не удалось установить соединение с сервером");
+						}
+
 					}
 					if (q%2==0)
 					{
@@ -314,7 +414,20 @@ namespace ruletka_home_edition
 						label8.Text = "Вы проиграли " + stavka + " руб";
 						label8.ForeColor = Color.Red;
 						USLOVIE1 = 4;
+						try
+						{
+							UpdateTable();
+						}
+						catch
+						{
+							MessageBox.Show("Не удалось установить соединение с сервером");
+						}
+
 					}
+				}
+				else
+				{
+					textBox1.Text = null;
 				}
 				return USLOVIE1;
 			}

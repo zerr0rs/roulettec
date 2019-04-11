@@ -44,10 +44,10 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label1.Font = new System.Drawing.Font("Ink Free", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.Location = new System.Drawing.Point(104, 48);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(267, 36);
+			this.label1.Size = new System.Drawing.Size(253, 39);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "ВЫ БАНКРОТ!!!";
 			// 
@@ -132,9 +132,11 @@
 			this.Controls.Add(this.trackBar1);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.label1);
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "Form2";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Form2";
+			this.Text = "Меню займа";
 			this.Load += new System.EventHandler(this.Form2_Load);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();

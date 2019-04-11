@@ -17,18 +17,24 @@ namespace ruletka_home_edition
 		{
 			InitializeComponent();
 		}
-		string connString = @"Data Source=DESKTOP-FS4I3IA;Initial Catalog=zerrrors;Integrated Security=True";
-		private void authorization()
-		{
-			string USERNAME;
-			string SqlText = "SELECT * FROM [Users] WHERE [Users].[login]=" + textBox1.Text + " AND [Users].[password]=" + textBox2.Text + "";
+	public static string connString = @"Data Source=DESKTOP-FS4I3IA;Initial Catalog=zerrrors;Integrated Security=True";
 
-			try
+
+
+        private void authorization()
+		{
+			string a = textBox1.Text.ToString();
+			string b = textBox2.Text.ToString();
+			string USERNAME;
+			string SqlText = "SELECT * FROM [Users] WHERE [Users].[login]=" + "\'" + a + "\'" + " AND [Users].[password]=" + "\'" + b + "\'";
+
+				try
 			{
+			
 				SqlDataAdapter da = new SqlDataAdapter(SqlText, connString);
 				DataSet ds = new DataSet();
-				da.Fill(ds, "[Users]");
-				dataGridView1.DataSource = ds.Tables["[Users]"].DefaultView;
+				da.Fill(ds, "[newtable]".ToString());
+				dataGridView1.DataSource = ds.Tables["[newtable]"].DefaultView;
 
 
 
@@ -37,10 +43,19 @@ namespace ruletka_home_edition
 					if (dataGridView1.Rows[0].
 						Cells[0].Value.ToString().Length != 0)
 					{
+						if ((dataGridView1.Rows[0].Cells[2].Value).ToString() == "")
+						{
+							Rullete.balans = 1000;
+						}
+						else
+						{
+							Rullete.balans = Convert.ToInt32(dataGridView1.Rows[0].Cells[2].Value);
+						}
 						USERNAME = textBox1.Text;
 						MessageBox.Show("добро пожаловать " + USERNAME);
 						Rullete.USERNAME = USERNAME;
 						Rullete.USERLOGIN = "Выход";
+						
 						Close();
 					}
 				}
@@ -65,18 +80,19 @@ namespace ruletka_home_edition
 
 		}
 
-		private void button1_Click(object sender, EventArgs e)
-		{
-			authorization();
-		}
-		private void Form3_Load(object sender, EventArgs e)
-		{
 
-		}
 
-		private void button1_Click_1(object sender, EventArgs e)
-		{
-			authorization();
-		}
-	}
+        private void button2_Click(object sender, EventArgs e)
+        {
+			Close();
+            Form4 f4 = new Form4();
+            f4.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            authorization();
+
+        }
+    }
 }
