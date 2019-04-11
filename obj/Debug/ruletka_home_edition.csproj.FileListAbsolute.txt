@@ -1,0 +1,33 @@
+C:\Users\zimpe\source\repos\ruletka_home_edition\ruletka_home_edition\bin\Debug\ruletka_home_edition.exe.config
+C:\Users\zimpe\source\repos\ruletka_home_edition\ruletka_home_edition\bin\Debug\ruletka_home_edition.exe
+C:\Users\zimpe\source\repos\ruletka_home_edition\ruletka_home_edition\bin\Debug\ruletka_home_edition.pdb
+C:\Users\zimpe\source\repos\ruletka_home_edition\ruletka_home_edition\obj\Debug\ruletka_home_edition.csprojAssemblyReference.cache
+C:\Users\zimpe\source\repos\ruletka_home_edition\ruletka_home_edition\obj\Debug\ruletka_home_edition.Properties.Resources.resources
+C:\Users\zimpe\source\repos\ruletka_home_edition\ruletka_home_edition\obj\Debug\ruletka_home_edition.csproj.GenerateResource.cache
+C:\Users\zimpe\source\repos\ruletka_home_edition\ruletka_home_edition\obj\Debug\ruletka_home_edition.csproj.CoreCompileInputs.cache
+C:\Users\zimpe\source\repos\ruletka_home_edition\ruletka_home_edition\obj\Debug\ruletka_home_edition.exe
+C:\Users\zimpe\source\repos\ruletka_home_edition\ruletka_home_edition\obj\Debug\ruletka_home_edition.pdb
+C:\Users\zimpe\source\repos\ruletka_home_edition\ruletka_home_edition\obj\Debug\ruletka_home_edition.Rullete.resources
+\\Class211-prepod\общая\ИП-17\Кускаев Белов\Кускаев\ruletka_home_edition\ruletka_home_edition\bin\Debug\ruletka_home_edition.exe.config
+\\Class211-prepod\общая\ИП-17\Кускаев Белов\Кускаев\ruletka_home_edition\ruletka_home_edition\bin\Debug\ruletka_home_edition.exe
+\\Class211-prepod\общая\ИП-17\Кускаев Белов\Кускаев\ruletka_home_edition\ruletka_home_edition\bin\Debug\ruletka_home_edition.pdb
+\\Class211-prepod\общая\ИП-17\Кускаев Белов\Кускаев\ruletka_home_edition\ruletka_home_edition\obj\Debug\ruletka_home_edition.csprojAssemblyReference.cache
+\\Class211-prepod\общая\ИП-17\Кускаев Белов\Кускаев\ruletka_home_edition\ruletka_home_edition\obj\Debug\ruletka_home_edition.Rullete.resources
+\\Class211-prepod\общая\ИП-17\Кускаев Белов\Кускаев\ruletka_home_edition\ruletka_home_edition\obj\Debug\ruletka_home_edition.Properties.Resources.resources
+\\Class211-prepod\общая\ИП-17\Кускаев Белов\Кускаев\ruletka_home_edition\ruletka_home_edition\obj\Debug\ruletka_home_edition.csproj.GenerateResource.cache
+\\Class211-prepod\общая\ИП-17\Кускаев Белов\Кускаев\ruletka_home_edition\ruletka_home_edition\obj\Debug\ruletka_home_edition.csproj.CoreCompileInputs.cache
+\\Class211-prepod\общая\ИП-17\Кускаев Белов\Кускаев\ruletka_home_edition\ruletka_home_edition\obj\Debug\ruletka_home_edition.exe
+\\Class211-prepod\общая\ИП-17\Кускаев Белов\Кускаев\ruletka_home_edition\ruletka_home_edition\obj\Debug\ruletka_home_edition.pdb
+\\Class211-prepod\общая\ИП-17\Кускаев Белов\Кускаев\ruletka_home_edition\ruletka_home_edition\obj\Debug\ruletka_home_edition.Form2.resources
+C:\Users\zimpe\Desktop\ruletka_home_edition\ruletka_home_edition\bin\Debug\ruletka_home_edition.exe.config
+C:\Users\zimpe\Desktop\ruletka_home_edition\ruletka_home_edition\bin\Debug\ruletka_home_edition.exe
+C:\Users\zimpe\Desktop\ruletka_home_edition\ruletka_home_edition\bin\Debug\ruletka_home_edition.pdb
+C:\Users\zimpe\Desktop\ruletka_home_edition\ruletka_home_edition\obj\Debug\ruletka_home_edition.csprojAssemblyReference.cache
+C:\Users\zimpe\Desktop\ruletka_home_edition\ruletka_home_edition\obj\Debug\ruletka_home_edition.Rullete.resources
+C:\Users\zimpe\Desktop\ruletka_home_edition\ruletka_home_edition\obj\Debug\ruletka_home_edition.Form2.resources
+C:\Users\zimpe\Desktop\ruletka_home_edition\ruletka_home_edition\obj\Debug\ruletka_home_edition.Form3.resources
+C:\Users\zimpe\Desktop\ruletka_home_edition\ruletka_home_edition\obj\Debug\ruletka_home_edition.Properties.Resources.resources
+C:\Users\zimpe\Desktop\ruletka_home_edition\ruletka_home_edition\obj\Debug\ruletka_home_edition.csproj.GenerateResource.cache
+C:\Users\zimpe\Desktop\ruletka_home_edition\ruletka_home_edition\obj\Debug\ruletka_home_edition.csproj.CoreCompileInputs.cache
+C:\Users\zimpe\Desktop\ruletka_home_edition\ruletka_home_edition\obj\Debug\ruletka_home_edition.exe
+C:\Users\zimpe\Desktop\ruletka_home_edition\ruletka_home_edition\obj\Debug\ruletka_home_edition.pdb
