@@ -18,7 +18,7 @@ namespace ruletka_home_edition
         {
             InitializeComponent();
 		}
-		string connString = @"Data Source=DESKTOP-FS4I3IA;Initial Catalog=zerrrors;Integrated Security=True";
+		string connString = @"workstation id=123123123.mssql.somee.com;packet size=4096;user id=zimper983_SQLLogin_1;pwd=r95xrx3xf7;data source=123123123.mssql.somee.com;persist security info=False;initial catalog=123123123";
 
 		
 

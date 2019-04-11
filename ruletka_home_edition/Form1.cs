@@ -24,7 +24,7 @@ namespace ruletka_home_edition
 			label6.Text = balans.ToString();
 
 		}
-		public static string connString = @"Data Source=DESKTOP-FS4I3IA;Initial Catalog=zerrrors;Integrated Security=True";
+		public static string connString = @"workstation id=123123123.mssql.somee.com;packet size=4096;user id=zimper983_SQLLogin_1;pwd=r95xrx3xf7;data source=123123123.mssql.somee.com;persist security info=False;initial catalog=123123123";
 		//Присваивание переменных
 		public static int balans = 1000, stavka = 25;
 		int USLOVIE1;
