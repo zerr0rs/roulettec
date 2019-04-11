@@ -25,7 +25,7 @@
 		public void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.button1 = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
@@ -52,7 +52,6 @@
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.timer3 = new System.Windows.Forms.Timer(this.components);
 			this.label10 = new System.Windows.Forms.Label();
-			this.timer4 = new System.Windows.Forms.Timer(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -283,11 +282,11 @@
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Location = new System.Drawing.Point(12, 205);
 			this.dataGridView1.Name = "dataGridView1";
-			dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-			dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DimGray;
-			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-			this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
+			dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DimGray;
+			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+			this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
 			this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
 			this.dataGridView1.Size = new System.Drawing.Size(240, 233);
 			this.dataGridView1.TabIndex = 26;
@@ -307,12 +306,6 @@
 			this.label10.TabIndex = 27;
 			this.label10.Text = "Connection_error";
 			this.label10.Visible = false;
-			// 
-			// timer4
-			// 
-			this.timer4.Enabled = true;
-			this.timer4.Interval = 1;
-			this.timer4.Tick += new System.EventHandler(this.button1_Click);
 			// 
 			// Rullete
 			// 
@@ -381,7 +374,6 @@
 		private System.Windows.Forms.DataGridView dataGridView1;
 		private System.Windows.Forms.Timer timer3;
 		private System.Windows.Forms.Label label10;
-		private System.Windows.Forms.Timer timer4;
 	}
 }
 

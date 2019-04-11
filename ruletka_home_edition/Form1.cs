@@ -53,7 +53,7 @@ namespace ruletka_home_edition
 		}
 			public void button1_Click(object sender, EventArgs e)
 		{
-			if (balans != 0)
+			if (balans >= stavka)
 			{
 				int q;
 				Random rand1 = new Random((int)DateTime.Now.Ticks & 0x0000126);
